@@ -1,0 +1,15 @@
+.actor {
+  margin-bottom: 5px;
+  border: 2px solid black;
+  border-radius: 5%;
+  width: 200px;
+  text-align: center;
+  list-style: none;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: 3px;
+}
+.actorsSet {
+  display: flex;
+  flex-wrap: wrap;
+}
