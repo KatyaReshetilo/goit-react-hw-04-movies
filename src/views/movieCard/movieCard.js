@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
-import { useParams, useLocation, useHistory } from 'react-router-dom';
+import { useParams, useLocation, useHistory, Route } from 'react-router-dom';
 import s from './movieCard.module.css';
 import themoviedbApi from '../../services/themoviedbApi';
+import AdditionalInformation from '../additionalInformation/additionalInformation';
+import Cast from '../cast/cast';
+import Reviews from '../reviews/reviews';
 export default function MovieCard() {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
@@ -61,6 +64,13 @@ export default function MovieCard() {
           </div>
         </div>
       )}
+      <AdditionalInformation />
+      <Route path="/movies/:movieId/cast">
+        <Cast />
+      </Route>
+      <Route path="/movies/:movieId/reviews">
+        <Reviews />
+      </Route>
     </>
   );
 }

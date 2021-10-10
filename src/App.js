@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import AppBar from './components/AppBar/appBar';
 import Container from './components/container/container';
 
@@ -28,13 +28,9 @@ function App() {
           </Route>
           <Route path="/movies/:movieId">
             <MovieCard />
-            <AdditionalInformation />
-            <Route path="/movies/:movieId/cast">
-              <Cast />
-            </Route>
-            <Route path="/movies/:movieId/reviews">
-              <Reviews />
-            </Route>
+          </Route>
+          <Route>
+            <Redirect to="/" />
           </Route>
         </Switch>
       </Suspense>
