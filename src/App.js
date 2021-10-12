@@ -8,11 +8,6 @@ const TrendingToday = lazy(() =>
   import('./views/TrendingMoviesToday/trendingToday'),
 );
 const MovieCard = lazy(() => import('./views/movieCard/movieCard'));
-const AdditionalInformation = lazy(() =>
-  import('./views/additionalInformation/additionalInformation'),
-);
-const Cast = lazy(() => import('./views/cast/cast'));
-const Reviews = lazy(() => import('./views/reviews/reviews'));
 
 function App() {
   return (
@@ -29,9 +24,8 @@ function App() {
           <Route path="/movies/:movieId">
             <MovieCard />
           </Route>
-          <Route>
-            <Redirect to="/" />
-          </Route>
+
+          <Redirect to="/" />
         </Switch>
       </Suspense>
     </Container>

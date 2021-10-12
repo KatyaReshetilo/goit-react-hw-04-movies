@@ -1,5 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useParams, useLocation, useHistory, Route } from 'react-router-dom';
+import {
+  useParams,
+  useLocation,
+  useHistory,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import s from './movieCard.module.css';
 import themoviedbApi from '../../services/themoviedbApi';
 import AdditionalInformation from '../additionalInformation/additionalInformation';
@@ -65,12 +71,14 @@ export default function MovieCard() {
         </div>
       )}
       <AdditionalInformation />
-      <Route path="/movies/:movieId/cast">
-        <Cast />
-      </Route>
-      <Route path="/movies/:movieId/reviews">
-        <Reviews />
-      </Route>
+      <Switch>
+        <Route path="/movies/:movieId/cast">
+          <Cast />
+        </Route>
+        <Route path="/movies/:movieId/reviews">
+          <Reviews />
+        </Route>
+      </Switch>
     </>
   );
 }
